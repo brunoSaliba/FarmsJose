@@ -1,0 +1,739 @@
+{
+  "common": {
+    "appName": "FarmsJose",
+    "loading": "Loading...",
+    "online": "Online",
+    "offline": "Offline",
+    "comingSoon": "Coming soon",
+    "manual": "Manual",
+    "none": "None",
+    "admin": "Admin",
+    "emptyState": "No records found",
+    "unknownError": "Unknown error",
+    "actions": {
+      "new": "New",
+      "edit": "Edit",
+      "create": "Create",
+      "update": "Update",
+      "save": "Save",
+      "saveChanges": "Save changes",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "deleteSelected": "Delete selected",
+      "previous": "Previous",
+      "next": "Next",
+      "back": "Back",
+      "logout": "Sign out",
+      "login": "Sign in",
+      "send": "Send",
+      "run": "Run",
+      "download": "Download",
+      "confirm": "Confirm",
+      "duplicate": "Duplicate",
+      "viewAll": "View all",
+      "addItem": "Add item",
+      "searchCep": "Search ZIP code",
+      "removeAccess": "Remove access"
+    },
+    "fields": {
+      "name": "Name",
+      "fullName": "Full name",
+      "email": "Email",
+      "password": "Password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmNewPassword": "Confirm new password",
+      "phone": "Phone",
+      "status": "Status",
+      "actions": "Actions",
+      "date": "Date",
+      "createdAt": "Created at",
+      "city": "City",
+      "state": "State",
+      "description": "Description",
+      "notes": "Notes",
+      "quantity": "Qty",
+      "unitPrice": "Unit price",
+      "discount": "Discount",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "customer": "Customer",
+      "factory": "Factory",
+      "product": "Product",
+      "type": "Type",
+      "subject": "Subject",
+      "error": "Error",
+      "profile": "Profile",
+      "modules": "Modules",
+      "access": "Access"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "pagination": {
+      "summary": "{{count}} record(s) - Page {{page}} of {{pages}}",
+      "summary_one": "{{count}} record - Page {{page}} of {{pages}}",
+      "summary_other": "{{count}} records - Page {{page}} of {{pages}}"
+    },
+    "select": {
+      "placeholder": "Select...",
+      "all": "All"
+    },
+    "language": {
+      "label": "Language",
+      "ptBR": "PT-BR",
+      "en": "EN"
+    },
+    "messages": {
+      "saveError": "Error while saving",
+      "operationError": "Operation error"
+    }
+  },
+  "layout": {
+    "modules": {
+      "animais": {
+        "label": "Farm",
+        "subtitle": "Module 1"
+      },
+      "fabrica": {
+        "label": "Factory",
+        "subtitle": "Module 2"
+      },
+      "fabricaAdmin": {
+        "label": "Factory",
+        "subtitle": "Management"
+      },
+      "admin": {
+        "label": "Admin",
+        "subtitle": "System"
+      }
+    },
+    "nav": {
+      "home": "Home",
+      "farms": "Farms",
+      "animals": "Animals",
+      "summary": "Summary",
+      "dashboard": "Dashboard",
+      "clients": "Clients",
+      "products": "Products",
+      "factories": "Factories",
+      "orders": "Orders",
+      "users": "Users",
+      "email": "Email",
+      "config": "Config",
+      "sql": "SQL"
+    },
+    "syncPending": "Sync pending changes",
+    "accountSettings": "Account settings",
+    "logout": "Sign out"
+  },
+  "app": {
+    "noFactoryFoundTitle": "No factory found.",
+    "noFactoryFoundDescription": "Create a factory before continuing.",
+    "registerFactory": "Create Factory"
+  },
+  "login": {
+    "invalidCredentials": "Incorrect email or password",
+    "emailPlaceholder": "you@email.com",
+    "passwordPlaceholder": "••••••••",
+    "entering": "Signing in..."
+  },
+  "home": {
+    "title": "Overview",
+    "cards": {
+      "farms": "Farms",
+      "animals": "Animals",
+      "lots": "Lots"
+    },
+    "summaryTitle": "Summary by Farm",
+    "table": {
+      "farm": "Farm",
+      "cityState": "City/State",
+      "lots": "Lots",
+      "animals": "Animals",
+      "actions": "Actions"
+    },
+    "viewDetails": "View details",
+    "noFarms": "No farms registered"
+  },
+  "fazendas": {
+    "title": "Farm Registry",
+    "new": "New Farm",
+    "searchPlaceholder": "Search by name, legal name or CNPJ...",
+    "deleteSelected": "Delete selected ({{count}})",
+    "empty": "No farm found",
+    "deleteError": "Error deleting farm",
+    "confirm": {
+      "title": "Confirm deletion",
+      "single": "Do you want to delete the farm {{name}}? This action cannot be undone.",
+      "multiple_one": "Do you want to delete {{count}} selected farm? This action cannot be undone.",
+      "multiple_other": "Do you want to delete {{count}} selected farms? This action cannot be undone.",
+      "deleting": "Deleting...",
+      "delete_one": "Delete",
+      "delete_other": "Delete ({{count}})"
+    },
+    "table": {
+      "id": "ID",
+      "tradeName": "Trade Name",
+      "cityState": "City/State",
+      "phone": "Phone",
+      "dateAdded": "Created"
+    }
+  },
+  "fazendaForm": {
+    "newTitle": "New Farm",
+    "editTitle": "Edit Farm",
+    "validation": {
+      "businessNameRequired": "Legal name is required",
+      "tradeNameRequired": "Trade name is required",
+      "invalidEmail": "Invalid email"
+    },
+    "lookupCepError": "Error fetching ZIP code",
+    "fields": {
+      "businessName": "Legal Name *",
+      "tradeName": "Trade Name *",
+      "cnpj": "CNPJ",
+      "cpf": "CPF",
+      "phone": "Phone",
+      "mobile": "Mobile",
+      "email": "Email",
+      "address": "Address",
+      "numberKm": "Number / KM",
+      "district": "District",
+      "reference": "Reference Point",
+      "cep": "ZIP Code",
+      "city": "City",
+      "state": "State",
+      "poBox": "PO Box"
+    },
+    "cepPlaceholder": "00000-000"
+  },
+  "animais": {
+    "title": "Animal Registry",
+    "new": "New Animal",
+    "allFarms": "All farms",
+    "searchPlaceholder": "Search by code or origin...",
+    "deleteConfirm": "Do you want to delete this animal?",
+    "empty": "No animal found",
+    "table": {
+      "farm": "Farm",
+      "lot": "Lot",
+      "identification": "Identification",
+      "sex": "Sex",
+      "category": "Category",
+      "weight": "Weight (kg)",
+      "purchasePrice": "Purchase Price",
+      "dateAdded": "Created"
+    },
+    "stats": {
+      "total": "Total",
+      "males": "Males",
+      "females": "Females",
+      "cows": "Cows",
+      "bulls": "Bulls",
+      "young": "Young",
+      "growth": "Growth",
+      "fattening": "Fattening",
+      "lotCost": "Lot Cost"
+    },
+    "sex": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "categories": {
+      "cow": "Cow",
+      "bull": "Bull",
+      "young": "Young",
+      "growth": "Growth",
+      "fattening": "Fattening"
+    }
+  },
+  "animalForm": {
+    "newTitle": "New Animal",
+    "editTitle": "Edit Animal",
+    "validation": {
+      "selectFarm": "Select a farm",
+      "lotRequired": "Lot is required",
+      "selectSex": "Select the sex"
+    },
+    "fields": {
+      "farm": "Farm *",
+      "lotNumber": "Lot Number *",
+      "sex": "Sex *",
+      "identificationType": "Identification Type",
+      "identificationCode": "Identification Code",
+      "ageMonths": "Age (months)",
+      "initialWeight": "Initial Weight (kg)",
+      "purchasePrice": "Purchase Price (BRL)",
+      "origin": "Origin",
+      "firstWeightDate": "First Weighing Date",
+      "categories": "Categories",
+      "sanitaryHistory": "Sanitary History"
+    }
+  },
+  "resumo": {
+    "title": "Summary by Farm",
+    "selectFarm": "Select the Farm",
+    "financialSummary": "Financial Summary",
+    "editCosts": "Edit Costs",
+    "saveCosts": "Save Costs",
+    "saveSuccess": "Costs updated successfully!",
+    "loading": "Loading summary...",
+    "stats": {
+      "totalAnimals": "Total Animals",
+      "males": "Males",
+      "females": "Females",
+      "cows": "Cows",
+      "bulls": "Bulls",
+      "young": "Young",
+      "growth": "Growth",
+      "fattening": "Fattening",
+      "lotCost": "Total Lot Cost",
+      "animals": "Total Animals",
+      "pricePerAnimal": "Price per Animal",
+      "monthlyCost": "Monthly Cost",
+      "dailyCost": "Daily Cost",
+      "totalAnimalCost": "Total Animal Cost",
+      "salePrice": "Sale Price",
+      "profit": "Profit"
+    },
+    "fields": {
+      "monthlyCost": "Monthly Cost (BRL)",
+      "totalAnimalCost": "Total Animal Cost (BRL)",
+      "salePrice": "Sale Price (BRL)"
+    }
+  },
+  "configuracao": {
+    "title": "Account Settings",
+    "sections": {
+      "personalData": "Personal data",
+      "changePassword": "Change password",
+      "session": "Session"
+    },
+    "messages": {
+      "newPasswordsMismatch": "New passwords do not match",
+      "noChanges": "No changes were made",
+      "updated": "Data updated successfully",
+      "saveError": "Error saving changes",
+      "emailChangeHint": "Changing email requires confirming your current password",
+      "currentPasswordHint": "Required when changing email or password",
+      "newPasswordHint": "Leave blank to keep current password",
+      "confirmPasswordHint": "Repeat the new password",
+      "connectedAs": "You are signed in as"
+    }
+  },
+  "clientes": {
+    "title": "Clients",
+    "new": "New Client",
+    "selected_one": "{{count}} client selected",
+    "selected_other": "{{count}} clients selected",
+    "searchPlaceholder": "Search by name, email or CPF/CNPJ...",
+    "filters": {
+      "all": "All",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "deleteConfirm": "Do you want to delete the client {{name}}?",
+    "bulkDeleteConfirm_one": "Do you want to delete {{count}} selected client?",
+    "bulkDeleteConfirm_other": "Do you want to delete {{count}} selected clients?",
+    "deleteError": "Error deleting client",
+    "empty": "No client found",
+    "table": {
+      "cityState": "City/State"
+    }
+  },
+  "clienteForm": {
+    "newTitle": "New Client",
+    "editTitle": "Edit Client",
+    "validation": {
+      "nameRequired": "Name is required",
+      "invalidEmail": "Invalid email",
+      "phoneRequired": "Phone is required"
+    },
+    "lookupCepError": "Error fetching ZIP code",
+    "fields": {
+      "name": "Name *",
+      "email": "Email *",
+      "phone": "Phone *",
+      "cpfCnpj": "CPF/CNPJ",
+      "address": "Address",
+      "cep": "ZIP Code",
+      "city": "City",
+      "state": "State",
+      "notes": "Notes",
+      "active": "Active"
+    }
+  },
+  "produtos": {
+    "title": "Products",
+    "new": "New Product",
+    "selected_one": "{{count}} product selected",
+    "selected_other": "{{count}} products selected",
+    "searchPlaceholder": "Search by name or description...",
+    "filters": {
+      "all": "All",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "deleteConfirm": "Do you want to delete the product {{name}}?",
+    "bulkDeleteConfirm_one": "Do you want to delete {{count}} selected product?",
+    "bulkDeleteConfirm_other": "Do you want to delete {{count}} selected products?",
+    "deleteError": "Error deleting product",
+    "empty": "No product found",
+    "table": {
+      "sku": "SKU",
+      "unit": "Unit",
+      "price": "Price"
+    }
+  },
+  "produtoForm": {
+    "newTitle": "New Product",
+    "editTitle": "Edit Product",
+    "validation": {
+      "nameRequired": "Name is required",
+      "unitRequired": "Unit is required",
+      "priceRequired": "Price is required",
+      "priceInvalid": "Price must be a valid value"
+    },
+    "fields": {
+      "name": "Name *",
+      "sku": "SKU",
+      "unit": "Unit *",
+      "price": "Price (BRL) *",
+      "description": "Description",
+      "active": "Active"
+    },
+    "skuPlaceholder": "Product code",
+    "pricePlaceholder": "0.00",
+    "units": {
+      "un": "Unit (un)",
+      "kg": "Kilogram (kg)",
+      "g": "Gram (g)",
+      "l": "Liter (l)",
+      "ml": "Milliliter (ml)",
+      "m": "Meter (m)",
+      "cx": "Box (cx)",
+      "pc": "Piece (pc)",
+      "pct": "Pack (pct)",
+      "sc": "Bag (sc)"
+    }
+  },
+  "pedido": {
+    "title": "Orders",
+    "newTitle": "New Order",
+    "editTitle": "Edit Order #{{number}}",
+    "detailTitle": "Order #{{number}}",
+    "createdAt": "Created on {{date}}",
+    "allCustomers": "All clients",
+    "allStatuses": "All statuses",
+    "empty": "No order found",
+    "notFound": "Order not found",
+    "cancelConfirm": "Do you want to cancel this order?",
+    "emailSentSuccess": "Email sent successfully!",
+    "table": {
+      "number": "Number",
+      "customer": "Client",
+      "totalValue": "Total Value",
+      "date": "Date",
+      "seller": "Seller"
+    },
+    "status": {
+      "rascunho": "Draft",
+      "confirmado": "Confirmed",
+      "enviado": "Sent",
+      "em_processamento": "Processing",
+      "finalizado": "Finished",
+      "cancelado": "Canceled"
+    },
+    "fields": {
+      "factory": "Factory",
+      "generalDiscount": "General Discount (%)",
+      "notes": "Notes",
+      "items": "Order Items",
+      "product": "Product",
+      "itemDescriptionPlaceholder": "Item description",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "total": "Total",
+      "clientNotFound": "Client not found",
+      "valueUnit": "Unit Price",
+      "offPrefix": "OFF-"
+    },
+    "actions": {
+      "confirm": "Confirm",
+      "cancelOrder": "Cancel Order",
+      "sendEmail": "Send Email",
+      "create": "Create Order",
+      "update": "Update Order"
+    },
+    "validation": {
+      "itemDescriptionRequired": "Description is required",
+      "minimumOne": "Minimum 1",
+      "valueRequired": "Value is required",
+      "selectCustomer": "Select a client",
+      "addItem": "Add at least 1 item"
+    }
+  },
+  "dashboardFabrica": {
+    "title": "Factory Dashboard",
+    "cards": {
+      "totalClients": "Total Clients",
+      "activeClients": "Active Clients",
+      "totalOrders": "Total Orders",
+      "products": "Products",
+      "factories": "Factories",
+      "emailsSent": "Emails Sent"
+    },
+    "ordersByStatus": "Orders by Status",
+    "latestEmails": "Latest Emails",
+    "noEmails": "No emails sent",
+    "emailStatus": {
+      "enviado": "Sent",
+      "falha": "Failed",
+      "pendente": "Pending"
+    },
+    "status": {
+      "rascunho": "Drafts",
+      "confirmado": "Confirmed",
+      "enviado": "Sent",
+      "em_processamento": "Processing",
+      "finalizado": "Finished",
+      "cancelado": "Canceled"
+    }
+  },
+  "emailConsolidado": {
+    "title": "Consolidated Email",
+    "sendTitle": "Send Consolidated Report",
+    "historyTitle": "Email History",
+    "sendSuccess": "Report sent successfully!",
+    "sendError": "Error sending report",
+    "empty": "No emails sent",
+    "fields": {
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "recipient": "Recipient"
+    },
+    "actions": {
+      "sendReport": "Send Report"
+    },
+    "table": {
+      "recipient": "Recipient"
+    },
+    "types": {
+      "confirmacao": "Confirmation",
+      "consolidado": "Consolidated"
+    }
+  },
+  "fabricas": {
+    "title": "Factories",
+    "new": "New Factory",
+    "selected_one": "{{count}} factory selected",
+    "selected_other": "{{count}} factories selected",
+    "searchPlaceholder": "Search by name...",
+    "filters": {
+      "all": "All",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "deleteConfirm": "Do you want to delete the factory {{name}}?",
+    "bulkDeleteConfirm_one": "Do you want to delete {{count}} selected factory?",
+    "bulkDeleteConfirm_other": "Do you want to delete {{count}} selected factories?",
+    "deleteError": "Error deleting factory",
+    "empty": "No factory found",
+    "table": {
+      "orderEmail": "Order Email"
+    }
+  },
+  "fabricaForm": {
+    "newTitle": "New Factory",
+    "editTitle": "Edit Factory",
+    "validation": {
+      "nameRequired": "Name is required",
+      "invalidEmail": "Invalid email",
+      "shortName": "Name is too short",
+      "minPassword": "Minimum 4 characters"
+    },
+    "fields": {
+      "name": "Name *",
+      "orderEmail": "Order Email",
+      "factoryAccount": "Factory Account",
+      "responsibleNameRequired": "Responsible Name *",
+      "responsibleName": "Responsible Name",
+      "accessEmailRequired": "Access Email *",
+      "accessEmail": "Access Email",
+      "passwordRequired": "Password *",
+      "newPassword": "New password",
+      "active": "Active"
+    },
+    "placeholders": {
+      "orderEmail": "email@example.com",
+      "fullName": "Full name",
+      "accessEmail": "factory@email.com",
+      "password": "Minimum 4 characters",
+      "keepPassword": "leave blank to keep current one"
+    }
+  },
+  "fabricaUsuarios": {
+    "title": "Users",
+    "selectFactory": "Select a factory.",
+    "new": "New user",
+    "createTitle": "Create new user",
+    "createError": "Error creating user",
+    "empty": "No linked user.",
+    "creating": "Creating...",
+    "createAction": "Create user",
+    "roles": {
+      "seller": "Seller",
+      "superusuario": "Superuser"
+    },
+    "fields": {
+      "password": "Password",
+      "profile": "Role"
+    }
+  },
+  "configuracoesAdmin": {
+    "title": "SMTP Settings",
+    "description": "Configure SMTP credentials to send confirmation emails and consolidated reports.",
+    "saveSuccess": "Settings saved successfully!",
+    "saveError": "Error saving settings",
+    "saveAction": "Save Settings",
+    "passwordConfigured": "(configured — leave blank to keep current value)",
+    "passwordHint": "Password is already configured. Fill it only if you want to change it.",
+    "fields": {
+      "smtpHost": "SMTP Host",
+      "smtpPort": "SMTP Port",
+      "smtpUser": "SMTP User",
+      "smtpPassword": "SMTP Password",
+      "smtpTls": "Use TLS",
+      "fromName": "Sender Name",
+      "companyEmail": "Company Email (consolidated)"
+    },
+    "placeholders": {
+      "smtpHost": "smtp.gmail.com",
+      "smtpPort": "587",
+      "smtpUser": "email@company.com",
+      "smtpPassword": "****",
+      "smtpTls": "true",
+      "fromName": "FarmsJose",
+      "companyEmail": "company@email.com"
+    }
+  },
+  "adminDashboard": {
+    "title": "Administration Panel",
+    "subtitle": "System overview and user management",
+    "cards": {
+      "totalUsers": "Total Users",
+      "activeUsers": "Active Users",
+      "inactiveUsers": "Inactive Users",
+      "admins": "Administrators"
+    },
+    "quickActions": "Quick Actions",
+    "newUser": "New User",
+    "manageUsers": "Manage Users",
+    "recentUsers": "Recent Users",
+    "none": "none"
+  },
+  "adminUsers": {
+    "title": "Users",
+    "summary": "{{total}} user(s) — {{active}} active",
+    "searchPlaceholder": "Search by name or email...",
+    "filters": {
+      "all": "All",
+      "activeOnly": "Active only",
+      "inactiveOnly": "Inactive only"
+    },
+    "empty": "No user found",
+    "fullAccess": "All modules",
+    "noAccess": "no access",
+    "managePermissions": "Manage permissions",
+    "deleteTitle": "Delete user?",
+    "deleteMessage": "Are you sure you want to delete user {{name}} ({{email}})? This action cannot be undone.",
+    "deleting": "Deleting...",
+    "permissions": {
+      "title": "Access permissions",
+      "adminHint": "Administrators have full access to all modules regardless of the permissions below.",
+      "saveError": "Error while saving"
+    },
+    "modules": {
+      "animais": {
+        "label": "Farm",
+        "subtitle": "Module 1 — Animals, farms, history, costs"
+      },
+      "fabrica": {
+        "label": "Factory",
+        "subtitle": "Module 2 — Orders, clients, email"
+      }
+    }
+  },
+  "adminUsuarioForm": {
+    "newTitle": "New User",
+    "editTitle": "Edit User",
+    "notFound": "User not found",
+    "sections": {
+      "basic": "Basic data",
+      "permissions": "Permissions"
+    },
+    "validation": {
+      "minTwo": "Minimum 2 characters",
+      "invalidEmail": "Invalid email",
+      "minPassword": "Minimum 4 characters"
+    },
+    "fields": {
+      "name": "Name *",
+      "email": "Email *",
+      "passwordCreate": "Password *",
+      "passwordEdit": "New password (leave blank to keep current one)",
+      "systemAdmin": "System administrator",
+      "activeUser": "Active user",
+      "accessModules": "Access modules"
+    },
+    "placeholders": {
+      "fullName": "Full name",
+      "email": "email@example.com",
+      "keepPassword": "Leave blank to keep current one",
+      "password": "Minimum 4 characters"
+    },
+    "badges": {
+      "superuserModule": "Superuser"
+    },
+    "adminHint": "Administrators have access to all modules"
+  },
+  "adminQuery": {
+    "title": "SQL Runner",
+    "subtitle": "Only SELECT queries are allowed. Maximum of 500 rows returned.",
+    "result": "Result",
+    "rows_one": "{{count}} row",
+    "rows_other": "{{count}} rows",
+    "truncated": "Truncated at 500 rows",
+    "emptyResult": "No result",
+    "nullValue": "NULL",
+    "ctrlEnter": "Ctrl+Enter to run",
+    "placeholder": "SELECT ...",
+    "running": "Running...",
+    "unknownError": "Unknown error",
+    "downloadCsv": "CSV",
+    "groups": {
+      "system": "System",
+      "module1": "Module 1 — Animals",
+      "module2": "Module 2 — Factory"
+    },
+    "queries": {
+      "users": "Users",
+      "tables": "Tables",
+      "migrations": "Migrations",
+      "farms": "Farms",
+      "animals": "Animals",
+      "sanitaryHistory": "Sanitary History",
+      "costs": "Costs",
+      "factories": "Factories",
+      "factoryUsers": "Factory Users",
+      "clients": "Clients",
+      "products": "Products",
+      "orders": "Orders",
+      "orderItems": "Order Items",
+      "emailLogs": "Email Logs",
+      "settings": "Settings"
+    }
+  }
+}
