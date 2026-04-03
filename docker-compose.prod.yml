@@ -31,9 +31,7 @@ services:
       retries: 5
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: ghcr.io/brunosaliba/farmsjose/backend:latest
     restart: unless-stopped
     expose:
       - "8001"
@@ -51,9 +49,7 @@ services:
         condition: service_healthy
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: ghcr.io/brunosaliba/farmsjose/frontend:latest
     restart: unless-stopped
     expose:
       - "3000"
