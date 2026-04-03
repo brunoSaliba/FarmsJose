@@ -1,12 +1,13 @@
-# FarmsJose — Deploy no Railway
+# FarmsJose — Deploy
 
 ## Arquitetura de Producao
 
 ```
-[Browser] → [Frontend (Nginx)] → /api/* → [Backend (FastAPI)] → [PostgreSQL]
-                                → /*    → static files (React SPA)
+[Browser] → [Caddy (HTTPS)] → [Frontend (Nginx)] → /api/* → [Backend (FastAPI)] → [PostgreSQL]
+                                                   → /*    → static files (React SPA)
 ```
 
+- **Caddy**: Reverse proxy com HTTPS automatico (Let's Encrypt)
 - **Frontend**: Build estatico React servido por Nginx, com proxy reverso para o backend
 - **Backend**: FastAPI com Alembic migrations automaticas no startup
 - **Database**: PostgreSQL 16
@@ -125,7 +126,102 @@ cp .env.example .env
 docker compose -f docker-compose.prod.yml up --build
 ```
 
-Acesse `http://localhost` (porta 80).
+Acesse `https://SEU_DOMINIO` (Caddy gera SSL automaticamente).
+
+---
+
+## 5. Deploy em VPS (Ubuntu/Debian)
+
+### 5.1 Preparar o Servidor
+
+```bash
+# Atualizar sistema
+sudo apt update && sudo apt upgrade -y
+
+# Instalar Docker
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+# Sair e reconectar para o grupo docker funcionar
+
+# Instalar Docker Compose plugin
+sudo apt install docker-compose-plugin -y
+
+# Abrir portas no firewall
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+```
+
+### 5.2 Clonar e Configurar
+
+```bash
+git clone https://github.com/SEU_USUARIO/FarmsJose.git
+cd FarmsJose
+
+# Criar arquivo de configuracao
+cp .env.example .env
+nano .env
+```
+
+Edite o `.env` com os valores de producao:
+
+```env
+DOMAIN=app.seudominio.com.br
+POSTGRES_PASSWORD=senha-forte-do-banco
+SECRET_KEY=cole-aqui-resultado-de-openssl-rand-hex-32
+COOKIE_SECURE=true
+ADMIN_EMAIL=admin@farmsjose.com
+ADMIN_PASSWORD=senha-forte-do-admin
+```
+
+### 5.3 Configurar DNS
+
+No painel do seu provedor de dominio, crie um registro **A**:
+
+| Tipo | Nome | Valor |
+|------|------|-------|
+| A | `app` (ou `@`) | IP da sua VPS |
+
+> Aguarde a propagacao DNS (pode levar alguns minutos).
+
+### 5.4 Subir a Aplicacao
+
+```bash
+docker compose -f docker-compose.prod.yml up -d --build
+```
+
+O Caddy obtem o certificado SSL automaticamente na primeira requisicao.
+
+### 5.5 Verificar Logs
+
+```bash
+# Ver se o backend iniciou e migrations rodaram
+docker compose -f docker-compose.prod.yml logs backend
+
+# Ver se o Caddy obteve o certificado SSL
+docker compose -f docker-compose.prod.yml logs caddy
+
+# Ver todos os servicos
+docker compose -f docker-compose.prod.yml ps
+```
+
+### 5.6 Atualizar Apos Mudancas
+
+```bash
+cd FarmsJose
+git pull
+docker compose -f docker-compose.prod.yml up -d --build
+```
+
+### 5.7 Backup do Banco
+
+```bash
+# Criar backup
+docker compose -f docker-compose.prod.yml exec db pg_dump -U farmsjose farmsjose > backup_$(date +%Y%m%d).sql
+
+# Restaurar backup
+cat backup_20260403.sql | docker compose -f docker-compose.prod.yml exec -T db psql -U farmsjose farmsjose
+```
 
 ---
 
@@ -141,21 +237,23 @@ Acesse `http://localhost:5173`. Debug via porta `5678`.
 
 ---
 
-## 6. Checklist Pre-Deploy
+## 7. Checklist Pre-Deploy
 
+- [ ] `DOMAIN` configurado (ex: `app.farmsjose.com.br`)
+- [ ] DNS apontando para o IP da VPS (registro A)
 - [ ] `SECRET_KEY` gerada com `openssl rand -hex 32`
+- [ ] `POSTGRES_PASSWORD` forte
 - [ ] `ADMIN_PASSWORD` forte (nao usar `admin123`)
 - [ ] `COOKIE_SECURE=true`
-- [ ] `CORS_ORIGINS` aponta para o dominio do frontend
 - [ ] `DEBUG=false`
-- [ ] Banco de dados PostgreSQL provisionado no Railway
-- [ ] `BACKEND_URL` do frontend aponta para a URL interna do backend
+- [ ] Portas 80 e 443 abertas no firewall
 
 ---
 
-## 7. Apos Deploy
+## 8. Apos Deploy
 
-1. Acesse a URL do frontend e faca login com `ADMIN_EMAIL` / `ADMIN_PASSWORD`
-2. Verifique os logs do backend no Railway para confirmar que migrations rodaram
+1. Acesse `https://SEU_DOMINIO` e faca login com `ADMIN_EMAIL` / `ADMIN_PASSWORD`
+2. Verifique os logs do backend para confirmar que migrations rodaram
 3. Crie novos usuarios pelo painel Admin
+4. Altere a senha do admin pelo perfil
 4. Altere a senha do admin pelo perfil
